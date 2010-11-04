@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<rtc:RtcProfile rtc:version="0.2" rtc:id="RTC:Keisuke SUZUKI, AIST:Category:RTWiimote:1.0.0" xmlns:rtcExt="http://www.openrtp.org/namespaces/rtc_ext" xmlns:rtcDoc="http://www.openrtp.org/namespaces/rtc_doc" xmlns:rtc="http://www.openrtp.org/namespaces/rtc" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <rtc:BasicInfo xsi:type="rtcExt:basic_info_ext" rtcExt:saveProject="RTWiimote2" rtc:updateDate="2009-09-08T17:43:36.216+09:00" rtc:creationDate="2009-09-08T17:43:36.216+09:00" rtc:abstract="WiiリモコンのRTコンポーネントです．
+出力ポートに11個のボタン，3軸加速度センサ
+入力ポートに4つのLED，振動，スピーカON/OFFを持ちます．" rtc:version="1.0.0" rtc:vendor="Keisuke SUZUKI, AIST" rtc:maxInstances="1" rtc:executionType="PeriodicExecutionContext" rtc:executionRate="1.0" rtc:description="WiiリモコンのRTコンポーネント" rtc:category="Category" rtc:componentKind="DataFlowComponent" rtc:activityType="PERIODIC" rtc:componentType="STATIC" rtc:name="RTWiimote">
+        <rtcExt:VersionUpLogs></rtcExt:VersionUpLogs>
+    </rtc:BasicInfo>
+    <rtc:Actions>
+        <rtc:OnInitialize xsi:type="rtcDoc:action_status_doc" rtc:implemented="true"/>
+        <rtc:OnFinalize xsi:type="rtcDoc:action_status_doc" rtc:implemented="false"/>
+        <rtc:OnStartup xsi:type="rtcDoc:action_status_doc" rtc:implemented="false"/>
+        <rtc:OnShutdown xsi:type="rtcDoc:action_status_doc" rtc:implemented="false"/>
+        <rtc:OnActivated xsi:type="rtcDoc:action_status_doc" rtc:implemented="false"/>
+        <rtc:OnDeactivated xsi:type="rtcDoc:action_status_doc" rtc:implemented="false"/>
+        <rtc:OnAborting xsi:type="rtcDoc:action_status_doc" rtc:implemented="false"/>
+        <rtc:OnError xsi:type="rtcDoc:action_status_doc" rtc:implemented="false"/>
+        <rtc:OnReset xsi:type="rtcDoc:action_status_doc" rtc:implemented="false"/>
+        <rtc:OnExecute xsi:type="rtcDoc:action_status_doc" rtc:implemented="true"/>
+        <rtc:OnStateUpdate xsi:type="rtcDoc:action_status_doc" rtc:implemented="false"/>
+        <rtc:OnRateChanged xsi:type="rtcDoc:action_status_doc" rtc:implemented="false"/>
+        <rtc:OnAction xsi:type="rtcDoc:action_status_doc" rtc:implemented="false"/>
+        <rtc:OnModeChanged xsi:type="rtcDoc:action_status_doc" rtc:implemented="false"/>
+    </rtc:Actions>
+    <rtc:ConfigurationSet>
+        <rtc:Configuration xsi:type="rtcExt:configuration_ext" rtcExt:variableName="conf_varname" rtc:unit="" rtc:defaultValue="beep.wav" rtc:type="std::string" rtc:name="beep">
+            <rtc:Constraint>
+                <rtc:ConstraintUnitType>
+                    <rtc:propertyIsEqualTo rtc:matchCase="false">
+                        <rtc:Literal>conf_constraint</rtc:Literal>
+                    </rtc:propertyIsEqualTo>
+                </rtc:ConstraintUnitType>
+            </rtc:Constraint>
+            <rtcDoc:Doc rtcDoc:constraint="" rtcDoc:range="" rtcDoc:unit="" rtcDoc:description="スピーカをONにしたときに出したいWavファイルを選択します．" rtcDoc:defaultValue="" rtcDoc:dataname=""/>
+            <rtcExt:Properties rtcExt:value="text" rtcExt:name="_widget_"/>
+        </rtc:Configuration>
+    </rtc:ConfigurationSet>
+    <rtc:DataPorts xsi:type="rtcExt:dataport_ext" rtcExt:position="LEFT" rtcExt:variableName="led" rtc:unit="" rtc:subscriptionType="" rtc:dataflowType="" rtc:interfaceType="" rtc:idlFile="" rtc:type="RTC::TimedOctet" rtc:name="led" rtc:portType="DataInPort">
+        <rtc:Constraint>
+            <rtc:ConstraintUnitType>
+                <rtc:propertyIsEqualTo rtc:matchCase="false">
+                    <rtc:Literal>dp_constraint</rtc:Literal>
+                </rtc:propertyIsEqualTo>
+            </rtc:ConstraintUnitType>
+        </rtc:Constraint>
+        <rtcDoc:Doc rtcDoc:operation="" rtcDoc:occerrence="" rtcDoc:unit="" rtcDoc:semantics="" rtcDoc:number="" rtcDoc:type="" rtcDoc:description="Wiiリモコンについている4つのLEDを点灯させます．&lt;br/&gt;ビット操作でON/OFFします．"/>
+    </rtc:DataPorts>
+    <rtc:DataPorts xsi:type="rtcExt:dataport_ext" rtcExt:position="LEFT" rtcExt:variableName="rumble" rtc:unit="" rtc:subscriptionType="" rtc:dataflowType="" rtc:interfaceType="" rtc:idlFile="" rtc:type="RTC::TimedBoolean" rtc:name="rumble" rtc:portType="DataInPort">
+        <rtc:Constraint>
+            <rtc:ConstraintUnitType>
+                <rtc:propertyIsEqualTo rtc:matchCase="false">
+                    <rtc:Literal>dp_constraint</rtc:Literal>
+                </rtc:propertyIsEqualTo>
+            </rtc:ConstraintUnitType>
+        </rtc:Constraint>
+        <rtcDoc:Doc rtcDoc:operation="" rtcDoc:occerrence="" rtcDoc:unit="" rtcDoc:semantics="" rtcDoc:number="" rtcDoc:type="" rtcDoc:description="振動のON/OFFをします．"/>
+    </rtc:DataPorts>
+    <rtc:DataPorts xsi:type="rtcExt:dataport_ext" rtcExt:position="LEFT" rtcExt:variableName="speaker" rtc:unit="" rtc:subscriptionType="" rtc:dataflowType="" rtc:interfaceType="" rtc:idlFile="" rtc:type="RTC::TimedBoolean" rtc:name="speaker" rtc:portType="DataInPort">
+        <rtc:Constraint>
+            <rtc:ConstraintUnitType>
+                <rtc:propertyIsEqualTo rtc:matchCase="false">
+                    <rtc:Literal>dp_constraint</rtc:Literal>
+                </rtc:propertyIsEqualTo>
+            </rtc:ConstraintUnitType>
+        </rtc:Constraint>
+        <rtcDoc:Doc rtcDoc:operation="" rtcDoc:occerrence="" rtcDoc:unit="" rtcDoc:semantics="" rtcDoc:number="" rtcDoc:type="" rtcDoc:description="スピーカの音をON/OFFします．&lt;br/&gt;コンフィギュレーションで音を選択します．"/>
+    </rtc:DataPorts>
+    <rtc:DataPorts xsi:type="rtcExt:dataport_ext" rtcExt:position="RIGHT" rtcExt:variableName="button" rtc:unit="" rtc:subscriptionType="" rtc:dataflowType="" rtc:interfaceType="" rtc:idlFile="" rtc:type="RTC::TimedShort" rtc:name="button" rtc:portType="DataOutPort">
+        <rtc:Constraint>
+            <rtc:ConstraintUnitType>
+                <rtc:propertyIsEqualTo rtc:matchCase="false">
+                    <rtc:Literal>dp_constraint</rtc:Literal>
+                </rtc:propertyIsEqualTo>
+            </rtc:ConstraintUnitType>
+        </rtc:Constraint>
+        <rtcDoc:Doc rtcDoc:operation="" rtcDoc:occerrence="" rtcDoc:unit="" rtcDoc:semantics="" rtcDoc:number="" rtcDoc:type="" rtcDoc:description="11個のボタンの情報を出力します．&lt;br/&gt;&lt;br/&gt;LEFT	= 0x0001,&lt;br/&gt;RIGHT	= 0x0002,&lt;br/&gt;DOWN	= 0x0004,&lt;br/&gt;UP		= 0x0008,&lt;br/&gt;PLUS	= 0x0010,&lt;br/&gt;TWO		= 0x0100,&lt;br/&gt;ONE		= 0x0200,&lt;br/&gt;_B		= 0x0400,	// ie. trigger&lt;br/&gt;_A		= 0x0800,&lt;br/&gt;MINUS	= 0x1000,&lt;br/&gt;HOME	= 0x8000,"/>
+    </rtc:DataPorts>
+    <rtc:DataPorts xsi:type="rtcExt:dataport_ext" rtcExt:position="RIGHT" rtcExt:variableName="acceleration" rtc:unit="" rtc:subscriptionType="" rtc:dataflowType="" rtc:interfaceType="" rtc:idlFile="" rtc:type="RTC::TimedFloatSeq" rtc:name="acceleration" rtc:portType="DataOutPort">
+        <rtc:Constraint>
+            <rtc:ConstraintUnitType>
+                <rtc:propertyIsEqualTo rtc:matchCase="false">
+                    <rtc:Literal>dp_constraint</rtc:Literal>
+                </rtc:propertyIsEqualTo>
+            </rtc:ConstraintUnitType>
+        </rtc:Constraint>
+        <rtcDoc:Doc rtcDoc:operation="" rtcDoc:occerrence="" rtcDoc:unit="" rtcDoc:semantics="" rtcDoc:number="" rtcDoc:type="" rtcDoc:description="3軸加速度センサの情報をX，Y，Zで出力します．"/>
+    </rtc:DataPorts>
+    <rtc:DataPorts xsi:type="rtcExt:dataport_ext" rtcExt:position="RIGHT" rtcExt:variableName="update_age" rtc:unit="" rtc:subscriptionType="" rtc:dataflowType="" rtc:interfaceType="" rtc:idlFile="" rtc:type="RTC::TimedULong" rtc:name="update_age" rtc:portType="DataOutPort">
+        <rtc:Constraint>
+            <rtc:ConstraintUnitType>
+                <rtc:propertyIsEqualTo rtc:matchCase="false">
+                    <rtc:Literal>dp_constraint</rtc:Literal>
+                </rtc:propertyIsEqualTo>
+            </rtc:ConstraintUnitType>
+        </rtc:Constraint>
+        <rtcDoc:Doc rtcDoc:operation="" rtcDoc:occerrence="" rtcDoc:unit="" rtcDoc:semantics="" rtcDoc:number="" rtcDoc:type="" rtcDoc:description="加速度センサが更新されている間，カウントアップします．"/>
+    </rtc:DataPorts>
+    <rtc:DataPorts xsi:type="rtcExt:dataport_ext" rtcExt:position="RIGHT" rtcExt:variableName="pitch" rtc:unit="" rtc:subscriptionType="" rtc:dataflowType="" rtc:interfaceType="" rtc:idlFile="" rtc:type="RTC::TimedFloat" rtc:name="pitch" rtc:portType="DataOutPort">
+        <rtc:Constraint>
+            <rtc:ConstraintUnitType>
+                <rtc:propertyIsEqualTo rtc:matchCase="false">
+                    <rtc:Literal>dp_constraint</rtc:Literal>
+                </rtc:propertyIsEqualTo>
+            </rtc:ConstraintUnitType>
+        </rtc:Constraint>
+        <rtcDoc:Doc rtcDoc:operation="" rtcDoc:occerrence="" rtcDoc:unit="" rtcDoc:semantics="" rtcDoc:number="" rtcDoc:type="" rtcDoc:description="Wiiリモコンを縦に回転させたときの現在の角度が出力されます．"/>
+    </rtc:DataPorts>
+    <rtc:DataPorts xsi:type="rtcExt:dataport_ext" rtcExt:position="RIGHT" rtcExt:variableName="roll" rtc:unit="" rtc:subscriptionType="" rtc:dataflowType="" rtc:interfaceType="" rtc:idlFile="" rtc:type="RTC::TimedFloat" rtc:name="roll" rtc:portType="DataOutPort">
+        <rtc:Constraint>
+            <rtc:ConstraintUnitType>
+                <rtc:propertyIsEqualTo rtc:matchCase="false">
+                    <rtc:Literal>dp_constraint</rtc:Literal>
+                </rtc:propertyIsEqualTo>
+            </rtc:ConstraintUnitType>
+        </rtc:Constraint>
+        <rtcDoc:Doc rtcDoc:operation="" rtcDoc:occerrence="" rtcDoc:unit="" rtcDoc:semantics="" rtcDoc:number="" rtcDoc:type="" rtcDoc:description="Wiiリモコンを軸方向に回転させたときの角度を出力します．"/>
+    </rtc:DataPorts>
+    <rtc:Language xsi:type="rtcExt:language_ext" rtc:kind="C++">
+        <rtcExt:targets rtcExt:os="Windows" rtcExt:langVersion="XP">
+            <rtcExt:libraries rtcExt:other="http://download.microsoft.com/download/9/0/f/90f019ac-8243-48d3-91cf-81fc4093ecfd/1830_usa_ddk.iso" rtcExt:version="3790" rtcExt:name="DDK"/>
+            <rtcExt:libraries rtcExt:other="http://wiiyourself.gl.tter.org/" rtcExt:version="1.14beta" rtcExt:name="WiiYourself!"/>
+        </rtcExt:targets>
+    </rtc:Language>
+</rtc:RtcProfile>

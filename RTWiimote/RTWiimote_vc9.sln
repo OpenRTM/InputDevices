@@ -1,0 +1,29 @@
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "RTWiimoteComp", "RTWiimoteComp_vc9.vcproj", "{95BC58B5-0301-4751-9EF1-5E9A57FBE875}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "RTWiimote", "RTWiimote_vc9.vcproj", "{9208E098-A63D-4FAA-9084-80AB1AD79180}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Release|Win32 = Release|Win32
+		Debug|Win32 = Debug|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{95BC58B5-0301-4751-9EF1-5E9A57FBE875}.Release|Win32.ActiveCfg = Release|Win32
+		{95BC58B5-0301-4751-9EF1-5E9A57FBE875}.Release|Win32.Build.0   = Release|Win32
+		{95BC58B5-0301-4751-9EF1-5E9A57FBE875}.Debug|Win32.ActiveCfg = Debug|Win32
+		{95BC58B5-0301-4751-9EF1-5E9A57FBE875}.Debug|Win32.Build.0   = Debug|Win32
+		{9208E098-A63D-4FAA-9084-80AB1AD79180}.Release|Win32.ActiveCfg = Release|Win32
+		{9208E098-A63D-4FAA-9084-80AB1AD79180}.Release|Win32.Build.0   = Release|Win32
+		{9208E098-A63D-4FAA-9084-80AB1AD79180}.Debug|Win32.ActiveCfg = Debug|Win32
+		{9208E098-A63D-4FAA-9084-80AB1AD79180}.Debug|Win32.Build.0   = Debug|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
